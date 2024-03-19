@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Script from "next/script";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,6 +15,24 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  try {
+    <>
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `window.aichatBotConfig = { chatbotId: 'JCSXY3HVGOUUZKZ' };`,
+        }}
+      />
+
+      <script
+        src="https://preprodweb.chatwit.ai/widget.js"
+        id="JCSXY3HVGOUUZKZ"
+        defer
+      ></script>
+    </>;
+  } catch (error) {
+    console.log(error);
+  }
+
   return (
     <html lang="en">
       <body className={inter.className}>{children}</body>
