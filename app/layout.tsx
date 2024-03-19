@@ -16,19 +16,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   try {
-    <>
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `window.aichatBotConfig = { chatbotId: 'JCSXY3HVGOUUZKZ' };`,
-        }}
-      />
+  // {{    <>
 
-      <script
-        src="https://preprodweb.chatwit.ai/widget.js"
-        id="JCSXY3HVGOUUZKZ"
-        defer
-      ></script>
-    </>;
+  //     </>}}
   } catch (error) {
     console.log(error);
   }
